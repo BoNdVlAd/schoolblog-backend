@@ -16,7 +16,7 @@ var _index2 = require("./utils/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_mongoose["default"].connect('mongodb+srv://admin:admin@cluster0.tpknnxv.mongodb.net/blog?retryWrites=true&w=majority').then(function () {
+_mongoose["default"].connect(process.env.MONGODB_URI).then(function () {
   return console.log("DB ok");
 })["catch"](function (err) {
   return console.log('DB error', err);
@@ -60,7 +60,7 @@ app.get('/',(req, res)=>{
 });
 */
 
-app.listen(4444, function (err) {
+app.listen(process.env.PORT || 4444, function (err) {
   if (err) {
     return console.log(err);
   }
