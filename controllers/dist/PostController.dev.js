@@ -33,7 +33,7 @@ var getLastTags = function getLastTags(req, res) {
           _context.t0 = _context["catch"](0);
           console.log(_context.t0);
           res.status(500).json({
-            message: "не удалось получить статью"
+            message: 'не удалось получить статью'
           });
 
         case 12:
@@ -67,7 +67,7 @@ var getAll = function getAll(req, res) {
           _context2.t0 = _context2["catch"](0);
           console.log(_context2.t0);
           res.status(500).json({
-            message: "не удалось получить статью"
+            message: 'не удалось получить статью'
           });
 
         case 11:
@@ -101,13 +101,13 @@ var getOne = function getOne(req, res) {
               if (err) {
                 console.log(error);
                 return res.status(500).json({
-                  message: "не удалось вернуть статью"
+                  message: 'не удалось вернуть статью'
                 });
               }
 
               if (!doc) {
                 return res.status(404).json({
-                  message: 'Статья не найдена'
+                  message: 'Статья не найдена ++++'
                 });
               }
 
@@ -116,7 +116,7 @@ var getOne = function getOne(req, res) {
           } catch (error) {
             console.log(error);
             res.status(500).json({
-              message: "не удалось получить статью"
+              message: 'не удалось получить статью'
             });
           }
 
@@ -145,13 +145,13 @@ var remove = function remove(req, res) {
               if (err) {
                 console.log(error);
                 res.status(500).json({
-                  message: "Не удалось удалить  статью"
+                  message: 'Не удалось удалить  статью'
                 });
               }
 
               if (!doc) {
                 return res.status(404).json({
-                  message: "Статья не найдена"
+                  message: 'Статья не найдена----------'
                 });
               }
 
@@ -162,7 +162,7 @@ var remove = function remove(req, res) {
           } catch (error) {
             console.log(error);
             res.status(500).json({
-              message: "не удалось получить статью"
+              message: 'не удалось получить статью'
             });
           }
 
@@ -187,7 +187,8 @@ var create = function create(req, res) {
             title: req.body.title,
             text: req.body.text,
             imageUrl: req.body.imageUrl,
-            tags: req.body.tags.split(','),
+            imageUrlAll: req.body.imageUrlAll,
+            tags: req.body.tags,
             user: req.userId
           });
           _context5.next = 4;
@@ -204,7 +205,7 @@ var create = function create(req, res) {
           _context5.t0 = _context5["catch"](0);
           console.log(_context5.t0);
           res.status(500).json({
-            message: "не удалось создать статью"
+            message: 'не удалось создать статью'
           });
 
         case 12:
@@ -232,6 +233,7 @@ var update = function update(req, res) {
             title: req.body.title,
             text: req.body.text,
             imageUrl: req.body.imageUrl,
+            imageUrlAll: req.body.imageUrlAll,
             tags: req.body.tags,
             user: req.userId
           }));
@@ -248,7 +250,7 @@ var update = function update(req, res) {
           _context6.t0 = _context6["catch"](0);
           console.log(_context6.t0);
           res.status(500).json({
-            message: "не удалось обновить статью"
+            message: 'не удалось обновить статью'
           });
 
         case 11:

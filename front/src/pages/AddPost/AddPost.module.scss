@@ -38,8 +38,16 @@
     margin-right: 15px;
   }
 }
-.image{
-  width: 200px;
-  display: block;
-  width: 100%;
+.image {
+  width: 400px;
+}
+.wrap {
+  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 10px;
 }

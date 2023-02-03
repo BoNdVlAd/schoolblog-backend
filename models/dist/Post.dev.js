@@ -16,8 +16,8 @@ var PostSchema = new _mongoose["default"].Schema({
   },
   text: {
     type: String,
-    required: true,
-    unique: true
+    required: true // unique: true
+
   },
   tags: {
     type: Array,
@@ -32,7 +32,11 @@ var PostSchema = new _mongoose["default"].Schema({
     ref: 'User',
     required: true
   },
-  imageUrl: String
+  imageUrl: String,
+  imageUrlAll: {
+    type: Array,
+    "default": []
+  }
 }, {
   timestamps: true
 });
